@@ -1,0 +1,24 @@
+# Maintainer: Emanuele Ballarin <emanuele@ballarin.cc>
+
+pkgname=nvidia-container-runtime-emaballarin
+_strpkgname=nvidia-container-runtime
+pkgver=2.0.0+1.docker18.09.2
+_strpkgver="2.0.0-1.docker18.09.2"
+pkgrel=1
+pkgdesc='NVIDIA container runtime. Custom version.'
+arch=('x86_64')
+_strarch="x86_64"
+url='https://github.com/NVIDIA/nvidia-container-runtime'
+license=('custom')
+depends=(libseccomp libnvidia-container-tools-emaballarin)
+provides=(nvidia-container-runtime)
+conflicts=(nvidia-container-runtime)
+source_x86_64=("https://nvidia.github.io/nvidia-container-runtime/centos7/x86_64/$_strpkgname-$_strpkgver.$_strarch.rpm")
+sha256sums_x86_64=('SKIP')
+
+package() {
+  cd "$srcdir"
+  install -m755 -d "$pkgdir/usr/bin"
+  install -D -m755 usr/bin/* "$pkgdir/usr/bin/"
+  install -D -m644 usr/share/licenses/$_strpkgname-*/LICENSE "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
+}

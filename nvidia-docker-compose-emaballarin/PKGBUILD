@@ -1,0 +1,24 @@
+# Maintainer: Emanuele Ballarin <emanuele@ballarin.cc>
+# Main contributor: Jan Buchar <Teyras@gmail.com>
+
+pkgname=nvidia-docker-compose-emaballarin
+_strpkgname=nvidia-docker-compose
+pkgver=0.1.6+git
+_strpkgver=0.1.6
+pkgrel=1
+pkgdesc="GPU enabled docker-compose wrapper. Custom version."
+arch=("x86_64")
+url="https://github.com/eywalker/nvidia-docker-compose"
+license=('custom')
+groups=()
+depends=('python' 'docker-compose' 'python-yaml' 'python-jinja')
+makedepends=('python-setuptools')
+provides=("nvidia-docker-compose")
+conflicts=("nvidia-docker-compose")
+source=("https://github.com/eywalker/${_strpkgname}/archive/v${_strpkgver}.tar.gz")
+sha256sum=('SKIP')
+
+package() {
+  cd "${srcdir}/$_strpkgname-$_strpkgver"
+  python setup.py install --root="${pkgdir}/"
+}

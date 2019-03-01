@@ -1,0 +1,26 @@
+# Maintainer: Emanuele Ballarin <emanuele@ballarin.cc>
+
+pkgname=nvidia-container-runtime-hook-emaballarin
+_strpkgname=nvidia-container-runtime-hook
+pkgver=1.4.0+1
+_strpkgver=1.4.0-1
+pkgrel=1
+pkgdesc='NVIDIA container runtime hook'
+arch=('x86_64')
+_strarch=x86_64
+url='https://github.com/NVIDIA/nvidia-container-runtime'
+license=('custom')
+depends=(nvidia-container-runtime)
+provides=(nvidia-container-runtime-hook)
+conflicts=(nvidia-container-runtime-hook)
+source_x86_64=("https://nvidia.github.io/nvidia-container-runtime/centos7/x86_64/${_strpkgname}-${_strpkgver}.${_strarch}.rpm")
+sha256sums_x86_64=('SKIP')
+
+package() {
+  cd "$srcdir"
+  install -m755 -d "$pkgdir/usr/bin"
+  install -D -m755 usr/bin/* "$pkgdir/usr/bin/"
+  install -D -m644 "etc/nvidia-container-runtime/config.toml" "$pkgdir/etc/nvidia-container-runtim/config.toml"
+  install -D -m644 "etc/nvidia-container-runtime/config.toml" "$pkgdir/etc/nvidia-container-runtime/config.toml"
+  install -D -m644 usr/share/licenses/${_strpkgname}-*/LICENSE "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
+}

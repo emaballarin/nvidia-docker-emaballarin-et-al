@@ -1,0 +1,23 @@
+pkgname=libnvidia-container-emaballarin
+_strpkgname=libnvidia-container
+_strpkgnamenr=libnvidia-container1
+pkgver=1.0.1_1
+_strpkgver="1.0.1-1"
+pkgrel=1
+pkgdesc='NVIDIA container runtime library. Custom version.'
+arch=('x86_64')
+_strarch=x86_64
+url='https://github.com/NVIDIA/libnvidia-container'
+license=('custom')
+depends=(libcap libseccomp)
+provides=(libnvidia-container)
+conflicts=(libnvidia-container)
+source_x86_64=("https://nvidia.github.io/libnvidia-container/centos7/x86_64/${_strpkgnamenr}-${_strpkgver}.${_strarch}.rpm")
+sha256sums_x86_64=('SKIP')
+
+package() {
+  cd "$srcdir"
+  install -m755 -d "$pkgdir/usr/lib"
+  cp -a usr/lib64/* "$pkgdir/usr/lib/"
+  install -D -m644 usr/share/licenses/*/LICENSE "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
+}
