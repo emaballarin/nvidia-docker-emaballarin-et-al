@@ -4,7 +4,7 @@
 pkgname=nvidia-docker-emaballarin
 _strpkgname=nvidia-docker
 pkgver=2.0.3+git
-pkgrel=1
+pkgrel=2
 pkgdesc='Build and run Docker containers leveraging NVIDIA GPUs. Custom version.'
 url='https://github.com/NVIDIA/nvidia-docker'
 arch=(x86_64)

@@ -2,8 +2,8 @@
 
 pkgname=libnvidia-container-tools-emaballarin
 _strpkgname=libnvidia-container-tools
-pkgver=1.0.1_1
-_strpkgver="1.0.1-1"
+pkgver=1.0.2_1
+_strpkgver="1.0.2-1"
 pkgrel=1
 pkgdesc='NVIDIA container runtime library (command-line tools). Custom version.'
 arch=('x86_64')
