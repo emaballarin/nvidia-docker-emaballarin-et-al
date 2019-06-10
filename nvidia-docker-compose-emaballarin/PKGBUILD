@@ -16,7 +16,7 @@ makedepends=('python-setuptools')
 provides=("nvidia-docker-compose")
 conflicts=("nvidia-docker-compose")
 source=("https://github.com/eywalker/${_strpkgname}/archive/v${_strpkgver}.tar.gz")
-sha256sum=('SKIP')
+sha256sums=('SKIP')
 
 package() {
   cd "${srcdir}/$_strpkgname-$_strpkgver"
