@@ -2,9 +2,9 @@
 
 pkgname=nvidia-container-runtime-emaballarin
 _strpkgname=nvidia-container-runtime
-pkgver=2.0.0+1.docker18.09.2
-_strpkgver="2.0.0-1.docker18.09.2"
-pkgrel=2
+pkgver=2.0.0+3.docker18.09.6
+_strpkgver="2.0.0-3.docker18.09.6"
+pkgrel=1
 pkgdesc='NVIDIA container runtime. Custom version.'
 arch=('x86_64')
 _strarch="x86_64"
