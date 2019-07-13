@@ -2,8 +2,8 @@
 
 pkgname=nvidia-container-runtime-emaballarin
 _strpkgname=nvidia-container-runtime
-pkgver=2.0.0+3.docker18.09.6
-_strpkgver="2.0.0-3.docker18.09.6"
+pkgver=2.0.0+3.docker18.09.7
+_strpkgver="2.0.0-3.docker18.09.7"
 pkgrel=1
 pkgdesc='NVIDIA container runtime. Custom version.'
 arch=('x86_64')
@@ -13,6 +13,7 @@ license=('custom')
 depends=(libseccomp libnvidia-container-tools-emaballarin)
 provides=(nvidia-container-runtime)
 conflicts=(nvidia-container-runtime)
+# https://nvidia.github.io/nvidia-container-runtime/centos7/x86_64/nvidia-container-runtime-2.0.0-3.docker18.09.7.x86_64.rpm
 source_x86_64=("https://nvidia.github.io/nvidia-container-runtime/centos7/x86_64/$_strpkgname-$_strpkgver.$_strarch.rpm")
 sha256sums_x86_64=('SKIP')
 
